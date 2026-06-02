@@ -1,4 +1,6 @@
-from pydantic_settings import BaseSettings
+from typing import Annotated
+
+from pydantic_settings import BaseSettings, NoDecode
 from pydantic import ConfigDict, field_validator
 
 class Settings(BaseSettings):
@@ -18,9 +20,21 @@ class Settings(BaseSettings):
     MAIL_FROM: str
     MAIL_SERVER: str = "smtp.gmail.com"
     MAIL_PORT: int = 587
-    ALLOWED_ORIGINS: list[str]  # frontend URL
+    ALLOWED_ORIGINS: Annotated[list[str], NoDecode]  # frontend URL
 
     model_config = ConfigDict(env_file=".env")
+
+    @field_validator("DEBUG", mode="before")
+    @classmethod
+    def parse_debug(cls, value):
+        """Allow boolean-like values and environment labels from .env/CI."""
+        if isinstance(value, str):
+            normalized = value.strip().lower()
+            if normalized in {"release", "production", "prod"}:
+                return False
+            if normalized in {"development", "dev"}:
+                return True
+        return value
 
     @field_validator("ALLOWED_ORIGINS", mode="before")
     @classmethod
