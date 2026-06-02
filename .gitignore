@@ -1,0 +1,103 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Python packaging and build output
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Test, coverage, and quality-tool caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+coverage.xml
+*.cover
+*.py,cover
+
+# FastAPI / local runtime output
+logs/*
+!logs/.gitkeep
+*.log
+*.pid
+*.seed
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Local uploaded/generated media
+uploads/
+media/
+static/uploads/
+
+# Celery / broker runtime files
+celerybeat-schedule
+celerybeat.pid
+
+# Alembic runtime cache
+alembic/**/__pycache__/
+
+# Docker local overrides
+docker-compose.override.yml
+
+# IDEs and editors
+.idea/
+.vscode/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Archives and backups
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.bak
+*.tmp
+*.swp
+*~

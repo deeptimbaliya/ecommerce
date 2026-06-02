@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome, {{ name }}! 🎉</h2>
+<p>Thank you for joining <strong>{{ app_name }}</strong>.</p>
+<p>Your account has been created with:</p>
+<ul>
+    <li>Email: <strong>{{ email }}</strong></li>
+</ul>
+<p>You can now log in and start exploring:</p>
+<a href="{{ login_url }}" class="button">Login to Your Account</a>
+<p>If you did not create this account, please ignore this email.</p>
+{% endblock %}
