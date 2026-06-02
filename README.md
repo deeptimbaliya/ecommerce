@@ -16,6 +16,8 @@ A FastAPI-based ecommerce backend with JWT authentication, user management, prof
 
 ## Project Structure
 
+
+
 ```text
 .
 +-- app/
