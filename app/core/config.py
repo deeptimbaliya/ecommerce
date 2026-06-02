@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     APP_NAME: str = "E-commerce API"
     DEBUG: bool = False
+    ENABLE_RATE_LIMITS: bool = True
     ACCESS_TOKEN_EXPIRE_MINUTES: int
     REFRESH_TOKEN_EXPIRE_DAYS: int 
     SECRET_KEY: str

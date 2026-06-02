@@ -1,3 +1,7 @@
+import os
+
+os.environ.setdefault("ENABLE_RATE_LIMITS", "False")
+
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
